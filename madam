@@ -4,9 +4,9 @@ pipeline {
          stage('git-clone') {
              steps {
                    git credentialsId: 'f28e4272-992a-451c-8320-86bbb10cbcbc', url: 'https://github.com/sumasatish/Studentapp.git'
+                   }
+                   }
                 stage('mvn clean') 
-}
-}
 {
              steps {
                     sh 'mvn clean'
