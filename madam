@@ -1,0 +1,21 @@
+pipeline {
+    agent {label 'practice'}
+     stages {
+         stage('git-clone') {
+             steps {
+                   git credentialsId: 'f28e4272-992a-451c-8320-86bbb10cbcbc', url: 'https://github.com/sumasatish/Studentapp.git'
+                stage('mvn clean') {
+             steps {
+                    sh 'mvn clean'
+           stage('mvn compile') {
+             steps {
+                    sh 'mvn compile'
+             stage('mvn package') {
+             steps {
+                   sh 'mvn package'
+                }
+            }
+        }
+    }
+
+}
